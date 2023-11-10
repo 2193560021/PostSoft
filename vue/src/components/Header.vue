@@ -4,15 +4,15 @@
         <span style="color: #fff;font-size: 30px;">流浪动物救助系统管理端</span>
       </div>
       <div style="flex:1"></div>
-      <div style="width:100px;padding-right:30px;padding-top:18px">
+      <div style="width:150px;padding-right:30px;padding-top:18px">
         <el-dropdown>
           <span class="el-dropdown-link" style="width: 80px">
-            <div style="width:100%;height:100%;cursor: pointer;">
+            <div style="width:100%;height:100%;cursor: pointer;color: white">
               {{ loginName }}
-            </div>
             <el-icon class="el-icon--right">
               <arrow-down />
             </el-icon>
+            </div>
           </span>
           <template #dropdown>
             <el-dropdown-menu>
@@ -28,10 +28,14 @@
 <script>
 import router from "@/router";
 import request from "@/utils/request";
+import {ArrowDown} from "@element-plus/icons";
 
 export default {
   name: "Header",
   props: ['user'],
+  components: {
+    ArrowDown
+  },
   data() {
     return {
       loginName:'管理员'
