@@ -76,44 +76,6 @@
 
 
 
-<!--        <el-dialog v-model="dialogVisible"-->
-<!--                   title="订单确认"-->
-<!--                   width="40%"-->
-<!--        >-->
-<!--          <div  width="120">-->
-
-<!--            <div style="text-align: center;margin: 0 auto">-->
-<!--              <img :src=purchaseLeft_img width="290" height="210" class="avatar " style="border-radius: 10px">-->
-<!--            </div>-->
-<!--            <div style="width: 300px;margin: 20px auto">-->
-<!--              商品名称：{{carName}}-->
-<!--            </div>-->
-<!--            <div style="width: 300px;margin: 20px auto">-->
-<!--              商品数量：{{num}}-->
-<!--            </div>-->
-<!--            <div style="width: 300px;margin: 20px auto">-->
-<!--              支付方式：{{payWay}}-->
-<!--            </div>-->
-<!--            <div style="width: 300px;margin: 20px auto">-->
-<!--              门店地址：{{health}}-->
-<!--            </div>-->
-<!--            <div style="width: 300px;margin: 20px auto">-->
-<!--              总价：{{onePrice*10000*num}}-->
-<!--            </div>-->
-
-<!--&lt;!&ndash;            <div style="width: 300px;margin: 20px auto">&ndash;&gt;-->
-<!--&lt;!&ndash;              {{customerId}}&ndash;&gt;-->
-<!--&lt;!&ndash;            </div>&ndash;&gt;-->
-
-<!--          </div>-->
-<!--          <template #footer>-->
-<!--          <span class="dialog-footer">-->
-<!--            <el-button @click="dialogVisible = false">取消</el-button>-->
-<!--            <el-button type="primary" @click="save">确认</el-button>-->
-<!--          </span>-->
-<!--          </template>-->
-<!--        </el-dialog>-->
-
 
         <el-dialog v-model="dialogVisible"
                    title="订单确认"

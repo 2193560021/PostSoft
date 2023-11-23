@@ -37,30 +37,7 @@ public class FileController {
      */
     @PostMapping("/upload")
     public Result<?> upload(MultipartFile file) throws IOException {
-//        log.info(file.toString());
 //
-//        //原始文件名
-//        String originalFilename = file.getOriginalFilename();
-//        String suffix = originalFilename.substring(originalFilename.lastIndexOf("."));
-//
-//        //使用UUID重新生成文件名，防止文件名重复造成文件覆盖
-//        String fileName = UUID.randomUUID().toString() + suffix;
-//
-//        //创建一个目录对象
-//        File dir = new File(basePath);
-//        if (!dir.exists()) {
-//            //目录不存在需要创建
-//            dir.mkdir();
-//        }
-//
-//        try {
-//            //将临时文件转存到指定位置
-//            file.transferTo(new File(basePath + fileName));
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//
-//        return Result.success(fileName);
 
 
         String originalFilename = file.getOriginalFilename();   //获取源文件名称

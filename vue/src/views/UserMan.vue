@@ -33,8 +33,7 @@
       <el-table-column label="操作" >
         <template #default="scope">
           <el-button @click="handleEdit(scope.row)"
-            >编辑</el-button
-          >
+            >编辑</el-button>
           <!-- <el-button
             size="small"
             type="danger"
@@ -42,7 +41,7 @@
             >删除</el-button> -->
           <el-popconfirm title="确认删除?" type="danger" @confirm="handleDelete(scope.row.id)">
             <template #reference>
-              <el-button type="danger">删除</el-button> 
+              <el-button type="danger">删除</el-button>
             </template>
           </el-popconfirm>
         </template>
@@ -127,9 +126,7 @@ export default {
       currentPage4:1,
       pageSize4:5,
       total:0,
-      tableData:[
-        
-      ],
+      tableData:[],
       userImg:require("@/assets/img/800014267.jpg")
     }
   },
@@ -242,3 +239,4 @@ export default {
   },
 }
 </script>
+

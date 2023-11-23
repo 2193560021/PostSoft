@@ -33,7 +33,7 @@
       <el-table-column prop="address" label="领养地址" width="180"/>
       <el-table-column prop="note" label="备注" width="110"/>
       <el-table-column prop="state" label="状态" width="80"/>
-      <el-table-column label="操作"  width="130">
+      <el-table-column label="操作" >
         <template #default="scope">
           <el-button @click="handleEdit(scope.row)" size="small"
             >编辑</el-button

@@ -71,7 +71,7 @@
 
       <el-dialog v-model="dialogVisible"
                  top="2vh"
-                 title="新增数据"
+                 title="编辑数据"
                  width="30%"
       >
         <el-form-item style="text-align: center" label-width="0">
@@ -171,29 +171,16 @@ export default {
       this.form = {}
     },
     save(){
-      if(this.form.id){
-        request.put("/orders",this.form).then(res => {
-          console.log(res)
-          if(res.code == 0 ){
-            this.$message.success("更新成功")
-          }else{
-            this.$message.error(res.msg)
-          }
-          this.load()
-          this.dialogVisible = false
-        })
-      } else{
-        request.post("/orders",this.form).then(res => {
-          console.log(res)
-          if(res.code == 0 ){
-            this.$message.success("新增成功")
-          }else{
-            this.$message.error(res.msg)
-          }
-          this.load()
-          this.dialogVisible = false
-        })
-      }
+      request.put("/orders",this.form).then(res => {
+        console.log(res)
+        if(res.code == 0 ){
+          this.$message.success("更新成功")
+        }else{
+          this.$message.error(res.msg)
+        }
+        this.load()
+        this.dialogVisible = false
+      })
     },
     handleEdit(row){
       this.form = JSON.parse(JSON.stringify(row))

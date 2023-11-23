@@ -41,7 +41,8 @@ public class LoginCheckFilter implements Filter {
                 "/files/download",
                 "/health",
                 "/unit",
-                "/user",    // TODO
+                "/unit/**",
+                //"/user",    // TODO
                 "/cars/upload",
                 "/cars/download",
                 "/refits/upload",

@@ -11,10 +11,6 @@
               <img :src="img" style="background-color: #fff;border-radius: 10px;
           margin: 10px auto" width="630" :alt="carName">
             </div>
-<!--          <div style="width: 17%; margin:0 20px;float: left" >-->
-<!--            <p style="padding: 0 5px;font-size: 20px">{{ carEngName }}</p>-->
-<!--            <p style="padding: 0 5px;font-size: 17px">{{ carCountry }}</p>-->
-<!--          </div>-->
           <div style="width: 100%; margin:0 20px;float: left;height: 100%" >
             <h1 style="font-weight: bolder;margin-bottom: 20px">{{ name }}</h1>
             <p style="font-family: 'HarmonyOS Sans SC',serif;font-size: 17px">

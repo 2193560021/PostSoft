@@ -3,12 +3,13 @@
 
 
     <div style="text-align: center;margin: 10px 0 10px">
-      <div style="font-size: 35px;font-weight: bolder;margin: 10px auto;width: 20%;border-bottom: #000 solid 5px">宠物购买</div>
+      <div style="font-size: 35px;font-weight: bolder;margin: 10px auto;width: 20%;border-bottom: #000 solid 5px">
+          宠物购买</div>
     </div>
     <el-row :gutter="24" style="margin:0 130px">
       <el-col :span="6" v-for="item in Pets" :key="item"  style="">
         <el-card style="width:290px;margin:20px 0;cursor: pointer" @click="handleOpen(item.name)">
-          <div style="overflow: hidden;width:250px;height:160px" >
+          <div style="overflow: hidden;width:250px;" >
             <img  :src="item.img"  class="image" style="width: 100%;height: 100%;"  alt=""/>
           </div>
 
@@ -31,7 +32,7 @@
       <el-col :span="6" v-for="item in Goods" :key="item"  style="">
         <el-card style="width:290px;margin:20px 0;cursor: pointer" @click="handleOpenGoods(item.name)">
           <!--                    <img src="../assets/img/pet/5EB08B1E94952C4464CC8DD8978EA4E4.jpg" class="image" style="width:250px;height:190px"/>-->
-          <div style="overflow: hidden;width:250px;height:160px" >
+          <div style="overflow: hidden;width:250px;" >
             <img  :src="item.img"  class="image" style="width: 100%;height: 100%;"  alt=""/>
           </div>
 
@@ -52,7 +53,7 @@
       <el-col :span="6" v-for="item in Health" :key="item"  style="">
         <el-card style="width:290px;margin:20px 0;cursor: pointer" @click="handleOpenHealth(item.name)">
           <!--                    <img src="../assets/img/pet/5EB08B1E94952C4464CC8DD8978EA4E4.jpg" class="image" style="width:250px;height:190px"/>-->
-          <div style="overflow: hidden;width:250px;height:160px" >
+          <div style="overflow: hidden;width:250px;" >
             <img  :src="item.img"  class="image" style="width: 100%;height: 100%;"  alt=""/>
           </div>
 

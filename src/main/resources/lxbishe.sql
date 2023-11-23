@@ -242,7 +242,7 @@ VALUES (1532212175635058690, 'http://localhost:8080/files/touxiang_xu.jpg', '刘
 DROP TABLE IF EXISTS `orders`;
 CREATE TABLE `orders`  (
     `id` bigint(20) NOT NULL COMMENT '订单号',
-    `img` varchar(64) NOT NULL COMMENT '图片',
+    `img` text NOT NULL COMMENT '图片',
     `name` varchar(64) NOT NULL COMMENT '商品名',
     `customer_id` bigint(20) NOT NULL COMMENT '买家id',
     `tel` varchar(64) NOT NULL COMMENT '联系方式',

@@ -1,6 +1,7 @@
 package com.anyue1517.sporty.controller;
 
 import com.anyue1517.sporty.common.Result;
+import com.anyue1517.sporty.entity.Kind;
 import com.anyue1517.sporty.entity.Orders;
 import com.anyue1517.sporty.service.OrdersService;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
@@ -63,6 +64,19 @@ public class OrdersController {
         ordersService.page(pageInfo, lambdaQueryWrapper);
 
         return Result.success(pageInfo);
+    }
+
+    /**
+     * 修改
+     *
+     * @param order
+     * @return
+     */
+    @PutMapping
+    public Result<?> update(@RequestBody Orders order) {
+
+        ordersService.updateById(order);
+        return Result.success();
     }
 
     /**
