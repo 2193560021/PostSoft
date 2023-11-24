@@ -7,7 +7,7 @@
             <el-button type="danger" @click="add">新增</el-button>
         </div>
         <!--表格区域-->
-        <el-table :data="tableData" border style="width: 98%">
+        <el-table :data="tableData" border style="width: 100%">
             <el-table-column prop="img" label="图片" width="200px">
                 <template #default="scope">
                     <el-image style="width: 120px; border-radius: 10px" :src="scope.row.img"></el-image>
@@ -19,7 +19,7 @@
             <el-table-column prop="price" label="价格" width="120px"/>
             <el-table-column prop="sale" label="销量" width="120px"/>
             <el-table-column prop="stock" label="库存" width="120px"/>
-            <el-table-column prop="note" label="备注" width="200px"/>
+            <el-table-column prop="note" label="备注" width="150px"/>
             <el-table-column fixed="right" label="操作" width="">
                 <template #default="scope">
                     <el-button size="normal" @click="handleEdit(scope.row)">编辑</el-button>

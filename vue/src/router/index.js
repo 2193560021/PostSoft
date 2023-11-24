@@ -101,10 +101,6 @@ const routes = [
       name: 'BlogDetail',
       component: () => import("@/views/BlogDetail")
     }, {
-      path: '/petai',
-      name: 'PetAI',
-      component: () => import("@/views/PetAI")
-    }, {
       path: '/buypet',
       name: 'Buypet',
       component: () => import("@/views/Buypet")

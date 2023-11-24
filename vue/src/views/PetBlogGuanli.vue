@@ -7,7 +7,7 @@
             <el-button type="danger" @click="add">新增</el-button>
         </div>
         <!--表格区域-->
-        <el-table :data="tableData" border style="width: 98%">
+        <el-table :data="tableData" border style="width: 100%">
             <el-table-column prop="img" label="博客封面" width="200px">
                 <template #default="scope">
                     <el-image style="width: 120px;border-radius: 10px" :src="scope.row.img"></el-image>

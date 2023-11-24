@@ -2,7 +2,7 @@
   <div>
     <el-menu :default-active="path" class="el-menu-demo" mode="horizontal"
         router
-        background-color="#e17c7c" text-color="#fff" active-text-color="#111"
+        background-color="#f19595" text-color="#fff" active-text-color="#111"
         @select="handleSelect">
       <div style="width:350px;padding-left:60px;padding-top:4px;font-weight:bold;color:#343536;font-size:20px">
         <span style="color: #fff;font-size: 30px">流浪动物救助平台</span>
@@ -10,7 +10,6 @@
       <el-menu-item index="/index"><span class="header_text">首页</span></el-menu-item>
       <el-menu-item index="/adoption"><span  class="header_text">流浪动物领养</span></el-menu-item>
       <el-menu-item index="/blog"><span  class="header_text">宠物博客</span></el-menu-item>
-      <el-menu-item index="/petai"><span  class="header_text">宠物识别</span></el-menu-item>
       <el-menu-item index="/buypet"><span  class="header_text">宠物购买</span></el-menu-item>
       <el-menu-item index="/petbaike"><span  class="header_text">动物/宠物 百科</span></el-menu-item>
       <div id="ifLogin" style="width:100px;padding-left:250px;padding-top:20px;">

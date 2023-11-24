@@ -178,7 +178,7 @@ export default {
           this.load()
           this.dialogVisible = false
         }else{
-          this.$message.error(res.msg)
+          this.$message.error("缺少信息")
         }
       })
     }

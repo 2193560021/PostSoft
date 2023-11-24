@@ -35,10 +35,10 @@ public class Goods {
     private String ddl;
 
     //销量
-    private String sale;
+    private Integer sale;
 
     //库存
-    private String stock;
+    private Integer stock;
 
     //备注
     private String note;

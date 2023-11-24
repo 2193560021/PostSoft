@@ -171,7 +171,10 @@ export default {
       count:1,
       address:'',
       what:'',
-      note:''
+      note:'',
+      sale_after: 0,
+      stock_after: 0,
+        goods_id:''
 
 
     }
@@ -202,11 +205,28 @@ export default {
            count:this.count,
            address:this.address,
            price:this.price,
-           state:'已购买'
+           state:'已购买',
+           sale:this.sale_after - 1  ,
+           stock:this.stock_after - 1  ,
+
          }).then(res => {
            if(res.code === '0'){
              this.dialogVisible = false
              this.$message.success("购买成功")
+               request.put("/goods",{
+                   id:this.goods_id,
+                   img:this.purchaseLeft_img,
+                   name:this.kind,
+                   price:this.price,
+                   date:this.gender,
+                   ddl:this.age,
+                   sale:this.sale_after + 1,
+                   stock:this.stock_after - 1,
+                   note:this.note,
+               }).then(res =>{
+                   console.log(res)
+                   this.load()
+               })
            }else if (res.code === '-1'){
              this.$message.error("出错了")
            }
@@ -228,6 +248,7 @@ export default {
            // this.tableData = res1.data.records
            // this.total = res1.data.total
 
+             this.goods_id = res.data.records[0].id
            this.purchaseLeft_img = res.data.records[0].img
            this.price = res.data.records[0].price
            this.gender = res.data.records[0].date
@@ -235,6 +256,8 @@ export default {
            this.kind = res.data.records[0].name
            this.liveStyle = res.data.records[0].sale
            this.note = res.data.records[0].note
+           this.sale_after = res.data.records[0].sale
+           this.stock_after = res.data.records[0].stock
 
 
            let str = res.data.records[0].price.indexOf('-')

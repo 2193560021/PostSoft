@@ -163,7 +163,7 @@ export default {
       customerId:'',
       count:1,
       address:'',
-      what:''
+      what:'',
 
 
     }
@@ -199,6 +199,7 @@ export default {
            if(res.code === '0'){
              this.dialogVisible = false
              this.$message.success("购买成功")
+
            }else if (res.code === '-1'){
              this.$message.error("出错了")
            }

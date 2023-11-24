@@ -146,25 +146,25 @@ CREATE TABLE `goods`  (
      `price` varchar(120) NOT NULL COMMENT '价格',
      `date` varchar(120) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '生产日期',
      `ddl` varchar(120) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '保质期',
-     `sale` varchar(120) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '销量',
-     `stock` varchar(120) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '库存',
+     `sale` int(10)  NOT NULL COMMENT '销量',
+     `stock` int(10)  NOT NULL COMMENT '库存',
      `note` varchar(120) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '备注',
      `create_time` datetime(0) NOT NULL COMMENT '创建时间',
      `update_time` datetime(0) NOT NULL COMMENT '更新时间',
      PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
-INSERT INTO `goods` VALUES (1531913671796604901, 'http://localhost:8080/宠物用品信息/狗/狗厕所/狗厕所.png', '狗厕所', '50', '2023-04-13','10years','1000','2000','狗狗厕所','2023-04-13 16:20:56','2023-04-13 16:20:56');
-INSERT INTO `goods` VALUES (1531913671796604902, 'http://localhost:8080/宠物用品信息/狗/狗粮/狗粮.png', '狗粮', '50', '2023-04-13','10years','1000','2000','狗粮','2023-04-13 16:20:56','2023-04-13 16:20:56');
-INSERT INTO `goods` VALUES (1531913671796604903, 'http://localhost:8080/宠物用品信息/狗/狗窝/狗窝.png', '狗窝', '50', '2023-04-13','10years','1000','2000','狗窝','2023-04-13 16:20:56','2023-04-13 16:20:56');
-INSERT INTO `goods` VALUES (1531913671796604904, 'http://localhost:8080/宠物用品信息/狗/零食/零食.png', '零食', '50', '2023-04-13','10years','1000','2000','零食','2023-04-13 16:20:56','2023-04-13 16:20:56');
-INSERT INTO `goods` VALUES (1531913671796604905, 'http://localhost:8080/宠物用品信息/猫/猫背包/猫背包.png', '猫背包', '50', '2023-04-13','10years','1000','2000','猫背包','2023-04-13 16:20:56','2023-04-13 16:20:56');
-INSERT INTO `goods` VALUES (1531913671796604906, 'http://localhost:8080/宠物用品信息/猫/猫厕所/猫厕所.png', '猫厕所', '50', '2023-04-13','10years','1000','2000','猫厕所','2023-04-13 16:20:56','2023-04-13 16:20:56');
-INSERT INTO `goods` VALUES (1531913671796604907, 'http://localhost:8080/宠物用品信息/猫/猫咪玩具/猫咪玩具.png', '猫咪玩具', '50', '2023-04-13','10years','1000','2000','猫咪玩具','2023-04-13 16:20:56','2023-04-13 16:20:56');
-INSERT INTO `goods` VALUES (1531913671796604908, 'http://localhost:8080/宠物用品信息/猫/猫咪指甲剪/猫咪指甲剪.png', '猫咪指甲剪', '50', '2023-04-13','10years','1000','2000','猫咪指甲剪','2023-04-13 16:20:56','2023-04-13 16:20:56');
-INSERT INTO `goods` VALUES (1531913671796604909, 'http://localhost:8080/宠物用品信息/猫/猫砂/猫砂.png', '猫砂', '50', '2023-04-13','10years','1000','2000','猫砂','2023-04-13 16:20:56','2023-04-13 16:20:56');
-INSERT INTO `goods` VALUES (1531913671796604910, 'http://localhost:8080/宠物用品信息/猫/猫碗/猫碗.png', '猫碗', '50', '2023-04-13','10years','1000','2000','猫碗','2023-04-13 16:20:56','2023-04-13 16:20:56');
-INSERT INTO `goods` VALUES (1531913671796604911, 'http://localhost:8080/宠物用品信息/猫/猫饮水机/猫饮水机.png', '猫饮水机', '50', '2023-04-13','10years','1000','2000','猫饮水机','2023-04-13 16:20:56','2023-04-13 16:20:56');
+INSERT INTO `goods` VALUES (1531913671796604901, 'http://localhost:8080/files/dd4590241bb3490086ae269ee37c4736$&$&狗厕所.png', '狗厕所', '50', '2023-04-13','10years',1000,2000,'狗狗厕所','2023-04-13 16:20:56','2023-04-13 16:20:56');
+INSERT INTO `goods` VALUES (1531913671796604902, 'http://localhost:8080/files/f182fb838c894575adc520243b8ed9de$&$&狗粮.png', '狗粮', '50', '2023-04-13','10years',1000,2000,'狗粮','2023-04-13 16:20:56','2023-04-13 16:20:56');
+INSERT INTO `goods` VALUES (1531913671796604903, 'http://localhost:8080/宠物用品信息/狗/狗窝/狗窝.png', '狗窝', '50', '2023-04-13','10years',1000,2000,'狗窝','2023-04-13 16:20:56','2023-04-13 16:20:56');
+INSERT INTO `goods` VALUES (1531913671796604904, 'http://localhost:8080/files/680db21c5a1a444ab4a65e7274ababef$&$&狗零食.png', '零食', '50', '2023-04-13','10years',1000,2000,'零食','2023-04-13 16:20:56','2023-04-13 16:20:56');
+INSERT INTO `goods` VALUES (1531913671796604905, 'http://localhost:8080/files/7baad5dfd44743a2b1af8ea1364b7258$&$&tb_image_share_1683794357184.jpg', '猫背包', '50', '2023-04-13','10years',1000,2000,'猫背包','2023-04-13 16:20:56','2023-04-13 16:20:56');
+INSERT INTO `goods` VALUES (1531913671796604906, 'http://localhost:8080/files/356fd9d41fba4110add144ce5f0ed9dd$&$&tb_image_share_1683794373342.jpg', '猫厕所', '50', '2023-04-13','10years',1000,2000,'猫厕所','2023-04-13 16:20:56','2023-04-13 16:20:56');
+INSERT INTO `goods` VALUES (1531913671796604907, 'http://localhost:8080/files/30e314b0b9504953aea26e6896734fd9$&$&tb_image_share_1683794392074.jpg', '猫咪玩具', '50', '2023-04-13','10years',1000,2000,'猫咪玩具','2023-04-13 16:20:56','2023-04-13 16:20:56');
+INSERT INTO `goods` VALUES (1531913671796604908, 'http://localhost:8080/files/2c202172913d40cd9b173802cd1e9c00$&$&tb_image_share_1683794411332.jpg', '猫咪指甲剪', '50', '2023-04-13','10years',1000,2000,'猫咪指甲剪','2023-04-13 16:20:56','2023-04-13 16:20:56');
+INSERT INTO `goods` VALUES (1531913671796604909, 'http://localhost:8080/files/6922956777814b2298ae53b26f3f35ef$&$&tb_image_share_1683794432195.jpg', '猫砂', '50', '2023-04-13','10years',1000,2000,'猫砂','2023-04-13 16:20:56','2023-04-13 16:20:56');
+INSERT INTO `goods` VALUES (1531913671796604910, 'http://localhost:8080/files/07f215ea10284a248391d09ef36c3c34$&$&tb_image_share_1683794451907.jpg', '猫碗', '50', '2023-04-13','10years',1000,2000,'猫碗','2023-04-13 16:20:56','2023-04-13 16:20:56');
+INSERT INTO `goods` VALUES (1531913671796604911, 'http://localhost:8080/files/f475b03c54a94fe69225bf705f3d2fdb$&$&tb_image_share_1683794476125.jpg', '猫饮水机', '50', '2023-04-13','10years',1000,2000,'猫饮水机','2023-04-13 16:20:56','2023-04-13 16:20:56');
 
 
 /* 宠物医疗表 */

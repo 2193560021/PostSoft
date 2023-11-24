@@ -59,31 +59,6 @@ public class UserController {
     }
 
 
-    /**
-     * 使用腾讯云发送短信
-     *
-     * @param user
-     * @param request
-     * @return
-     */
-    @PostMapping("/sendMsg")
-    public Result<?> sendMsg(@RequestBody User user, HttpServletRequest request) {
-        //获取手机号
-        String phone = user.getPhone();
-        if (StringUtils.isNotEmpty(phone)) {
-            //生成随机四位验证码
-            String code = ValidateCodeUtils.generateValidateCode(4).toString();
-            log.info("code = {}", code);
-            //调用腾讯云提供的短信API完成短信发送服务
-            SMSUtils.sendMessage(phone, code, 5);
-            //将生成的验证码保存到session域中用于验证登录
-            request.getSession().setAttribute(code, code);
-
-            return Result.success();
-        }
-        return Result.error("-1", "短信发送失败");
-    }
-
 
     /**
      * 使用账号密码登录
@@ -115,41 +90,6 @@ public class UserController {
         return Result.success(userOne);
     }
 
-
-    /**
-     * 使用手机验证码登录
-     *
-     * @param map
-     * @param request
-     * @return
-     */
-    @PostMapping("/loginByCode")
-    public Result<?> loginByCode(@RequestBody Map map, HttpServletRequest request) {
-
-        log.info(map.toString());
-        //获取登录手机号
-        String phone = map.get("phone").toString();
-        //获取验证码
-        String code = map.get(("code")).toString();
-
-        //从session中取到验证码
-        Object codeInSession = request.getSession().getAttribute(code);
-
-        //进行验证码的比对（页面提交的和session中保存的进行比对）
-        if (codeInSession != null && codeInSession.equals(code)) {
-            //如果比对成功，则判断用户是否已经注册
-            LambdaQueryWrapper<User> queryWrapper = new LambdaQueryWrapper<>();
-            queryWrapper.eq(User::getPhone, phone);
-
-            User userOne = userService.getOne(queryWrapper);
-            if (userOne == null) {
-                return Result.error("-1", "手机号未注册，请先注册再登录");
-            }
-            request.getSession().setAttribute("user", userOne.getId());
-            return Result.success(userOne);
-        }
-        return Result.error("-1", "登录失败");
-    }
 
     /**
      * 新增用户

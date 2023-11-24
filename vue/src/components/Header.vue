@@ -1,5 +1,5 @@
 <template>
-    <div style="height:50px; line-height:50px; background-color:#c55151; display:flex">
+    <div style="height:50px; line-height:50px; background-color:#fc7c7c; display:flex">
         <div style="width:100%; padding-left:10px; font-weight:bold; color:dodgerblue; font-size:20px; text-align: center">
             <span style="color: #fff; font-size: 30px;">流浪动物救助系统管理端</span>
         </div>
