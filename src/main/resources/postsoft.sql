@@ -173,6 +173,7 @@ CREATE TABLE `health`  (
     `id` bigint(20) NOT NULL COMMENT '主键',
     `img` varchar(120) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '封面',
     `name` varchar(120) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '服务名称',
+    `style` varchar(120) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '服务方式',
     `price` varchar(120) NOT NULL COMMENT '价格',
     `sale` varchar(120) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '销量',
     `note` varchar(120) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '备注',
@@ -181,12 +182,12 @@ CREATE TABLE `health`  (
     PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
-INSERT INTO `health` VALUES (1531913671796604994, 'http://localhost:8080/宠物医疗信息/猫/绝育/绝育.png', '绝育', '1388', '2000','猫咪绝育','2023-04-13 16:20:56','2023-04-13 16:20:56');
-INSERT INTO `health` VALUES (1531913671796604902, 'http://localhost:8080/宠物医疗信息/猫/洗澡/洗澡.png', '洗澡', '1388', '2000','猫咪洗澡','2023-04-13 16:20:56','2023-04-13 16:20:56');
-INSERT INTO `health` VALUES (1531913671796604903, 'http://localhost:8080/宠物医疗信息/猫/疫苗/疫苗.png', '疫苗', '1388', '2000','猫咪疫苗','2023-04-13 16:20:56','2023-04-13 16:20:56');
-INSERT INTO `health` VALUES (1531913671796604904, 'http://localhost:8080/宠物医疗信息/狗/绝育/绝育.png', '绝育', '1388', '2000','狗狗绝育','2023-04-13 16:20:56','2023-04-13 16:20:56');
-INSERT INTO `health` VALUES (1531913671796604905, 'http://localhost:8080/宠物医疗信息/狗/洗澡/洗澡.png', '洗澡', '1388', '2000','狗狗洗澡','2023-04-13 16:20:56','2023-04-13 16:20:56');
-INSERT INTO `health` VALUES (1531913671796604906, 'http://localhost:8080/宠物医疗信息/狗/疫苗/疫苗.png', '疫苗', '1388', '2000','狗狗疫苗','2023-04-13 16:20:56','2023-04-13 16:20:56');
+INSERT INTO `health` VALUES (1531913671796604994, 'http://localhost:8080/宠物医疗信息/猫/绝育/绝育.png', '绝育', '手术','1388', '2000','猫咪绝育','2023-04-13 16:20:56','2023-04-13 16:20:56');
+INSERT INTO `health` VALUES (1531913671796604902, 'http://localhost:8080/宠物医疗信息/猫/洗澡/洗澡.png', '洗澡', '淋浴','1388', '2000','猫咪洗澡','2023-04-13 16:20:56','2023-04-13 16:20:56');
+INSERT INTO `health` VALUES (1531913671796604903, 'http://localhost:8080/宠物医疗信息/猫/疫苗/疫苗.png', '疫苗', '打针','1388', '2000','猫咪疫苗','2023-04-13 16:20:56','2023-04-13 16:20:56');
+INSERT INTO `health` VALUES (1531913671796604904, 'http://localhost:8080/宠物医疗信息/狗/绝育/绝育.png', '绝育', '手术','1388', '2000','狗狗绝育','2023-04-13 16:20:56','2023-04-13 16:20:56');
+INSERT INTO `health` VALUES (1531913671796604905, 'http://localhost:8080/宠物医疗信息/狗/洗澡/洗澡.png', '洗澡', '淋浴','1388', '2000','狗狗洗澡','2023-04-13 16:20:56','2023-04-13 16:20:56');
+INSERT INTO `health` VALUES (1531913671796604906, 'http://localhost:8080/宠物医疗信息/狗/疫苗/疫苗.png', '疫苗', '打针','1388', '2000','狗狗疫苗','2023-04-13 16:20:56','2023-04-13 16:20:56');
 
 
 /*博客表*/

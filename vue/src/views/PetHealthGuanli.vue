@@ -13,10 +13,11 @@
                     <el-image style="width: 120px;border-radius: 10px" :src="scope.row.img"></el-image>
                 </template>
             </el-table-column>
-            <el-table-column prop="name" label="服务名称" width="150px"/>
-            <el-table-column prop="price" label="价格" width="150px"/>
-            <el-table-column prop="sale" label="销量" width="150px"/>
-            <el-table-column prop="note" label="备注" width="200px"/>
+            <el-table-column prop="name" label="服务名称" width="180px"/>
+            <el-table-column prop="style" label="服务方式" width="180px"/>
+            <el-table-column prop="price" label="价格" width="180px"/>
+            <el-table-column prop="sale" label="销量" width="180px"/>
+            <el-table-column prop="note" label="备注" width="300px"/>
             <el-table-column label="操作">
                 <template #default="scope">
                     <el-button size="normal" @click="handleEdit(scope.row)">编辑</el-button>
@@ -49,6 +50,9 @@
                     </el-form-item>
                     <el-form-item label="服务名称">
                         <el-input v-model="form.name" style="width:90%"></el-input>
+                    </el-form-item>
+                    <el-form-item label="服务方式">
+                        <el-input v-model="form.style" style="width:90%"></el-input>
                     </el-form-item>
                     <el-form-item label="价格">
                         <el-input v-model="form.price" style="width:90%"></el-input>

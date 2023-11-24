@@ -23,6 +23,9 @@ public class Health {
     //服务名称
     private String name;
 
+    //服务方式
+    private String style;
+
     //价格
     private String price;
 
