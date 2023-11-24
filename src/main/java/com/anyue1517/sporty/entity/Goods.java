@@ -2,6 +2,7 @@ package com.anyue1517.sporty.entity;
 
 import com.baomidou.mybatisplus.annotation.FieldFill;
 import com.baomidou.mybatisplus.annotation.TableField;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 
 import java.time.LocalDateTime;
@@ -27,6 +28,7 @@ public class Goods {
     private Integer price;
 
     //生产日期
+    @JsonFormat(pattern = "yyyy-MM-dd",timezone = "GMT+8")
     private String date;
 
     //保质期

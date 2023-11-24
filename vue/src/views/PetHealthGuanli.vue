@@ -3,20 +3,20 @@
         <!-- 功能区域 -->
         <div style="margin:10px 0">
             <el-input v-model="name" placeholder="请输入关键字" style="width:20%" clearable></el-input>
-            <el-button type="danger" style="margin:5px 10px" @click="load">搜索</el-button>
+            <el-button type="danger" style="margin-left: 10px" @click="load">搜索</el-button>
             <el-button type="danger" @click="add">新增</el-button>
         </div>
-
+        <!--表格区域-->
         <el-table :data="tableData" border style="width: 98%">
-            <el-table-column prop="img" label="图片" width="330px">
+            <el-table-column prop="img" label="图片" width="200px">
                 <template #default="scope">
-                    <el-image style="width: 300px;border-radius: 10px" :src="scope.row.img"></el-image>
+                    <el-image style="width: 120px;border-radius: 10px" :src="scope.row.img"></el-image>
                 </template>
             </el-table-column>
             <el-table-column prop="name" label="服务名称" width="150px"/>
             <el-table-column prop="price" label="价格" width="150px"/>
             <el-table-column prop="sale" label="销量" width="150px"/>
-            <el-table-column prop="note" label="备注" width="250px"/>
+            <el-table-column prop="note" label="备注" width="200px"/>
             <el-table-column label="操作">
                 <template #default="scope">
                     <el-button size="normal" @click="handleEdit(scope.row)">编辑</el-button>
@@ -28,32 +28,25 @@
                 </template>
             </el-table-column>
         </el-table>
-
+        <!--主体区域-->
         <div style="margin:10px 0">
-            <el-pagination
-                    v-model:currentPage="currentPage4"
-                    v-model:page-size="pageSize4"
-                    :page-sizes="[5,10, 20, 30, 40]"
-                    :small="small"
-                    :disabled="disabled"
-                    :background="background"
-                    layout="total, sizes, prev, pager, next, jumper"
-                    :total="total"
-                    @size-change="handleSizeChange"
-                    @current-change="handleCurrentChange"/>
-
-
-            <el-dialog v-model="dialogVisible" title="数据" top="3vh" width="50%">
-                <el-form :model="form" label-width="220px">
-                    <el-form-item style="text-align: center" label-width="0">
-                        <img :src="form.img" width="300" class="avatar " style="border-radius: 10px;margin: 10px auto">
+            <!--分页栏-->
+            <el-pagination v-model:currentPage="currentPage" v-model:page-size="pageSize"
+                           :page-sizes="[5,10,20]" :small="true" :background="true"
+                           layout="total, sizes, prev, pager, next, jumper" :total="total"
+                           @size-change="handleSizeChange"
+                           @current-change="handleCurrentChange">
+            </el-pagination>
+            <!--对话框-->
+            <el-dialog v-model="dialogVisible" top="3vh" title="宠物医疗数据" width="40%">
+                <el-form :model="form" label-width="120px">
+                    <el-form-item style="text-align: center" label-width="10px">
                         <el-upload class="avatar-uploader" action="http://localhost:8080/files/upload"
                                    :show-file-list="false" :on-success="handleAvatarSuccess"
-                                   style="margin: 5px auto;width: 80%">
-                            <el-button type="danger"> 修改图片</el-button>
+                                   style="margin: 5px auto; width: 80%">
+                            <img class="avatar " :src="form.img" width="100" height="100" style="border-radius: 10px"/>
                         </el-upload>
                     </el-form-item>
-
                     <el-form-item label="服务名称">
                         <el-input v-model="form.name" style="width:90%"></el-input>
                     </el-form-item>
@@ -64,37 +57,33 @@
                         <el-input v-model="form.sale" style="width:90%"/>
                     </el-form-item>
                     <el-form-item label="备注">
-                        <el-input v-model="form.note" style="width:90%"/>
+                        <el-input v-model="form.note" :rows="3" type="textarea" style="width:90%"/>
                     </el-form-item>
                 </el-form>
                 <template #footer>
           <span class="dialog-footer">
             <el-button @click="dialogVisible = false">取消</el-button>
-            <el-button type="primary" @click="save"
-            >确认</el-button>
+            <el-button type="primary" @click="save">确认</el-button>
           </span>
                 </template>
             </el-dialog>
-
         </div>
     </div>
 </template>
-
 <script>
-import {assertExpressionStatement} from '@babel/types'
+
 import request from '@/utils/request'
 
-
 export default {
-    name: 'User',
+    name: 'PetHealthGuanli',
     components: {},
     data() {
         return {
             form: {},
             dialogVisible: false,
             name: '',
-            currentPage4: 1,
-            pageSize4: 5,
+            currentPage: 1,
+            pageSize: 10,
             total: 0,
             tableData: [],
             userImg: require("@/assets/img/800014267.jpg")
@@ -108,8 +97,8 @@ export default {
         load() {
             request.get("/health", {
                 params: {
-                    pageNum: this.currentPage4,
-                    pageSize: this.pageSize4,
+                    pageNum: this.currentPage,
+                    pageSize: this.pageSize,
                     search: this.name
                 }
             }).then(res => {
@@ -165,14 +154,14 @@ export default {
 
         },
         handleSizeChange(pageSize) {     //改变每页数量触发
-            this.pageSize4 = pageSize
+            this.pageSize = pageSize
             this.load()
         },
         handleCurrentChange(pageNum) {  //改变当前页码触发
-            this.currentPage4 = pageNum
+            this.currentPage = pageNum
             this.load()
         },
-        pageSize4() {
+        pageSize() {
 
         },
         handleAvatarSuccess(res) {

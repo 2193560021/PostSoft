@@ -66,11 +66,9 @@ public class GoodsController {
      */
     @PutMapping
     public Result<?> update(@RequestBody Goods goods) {
-
         goodsService.updateById(goods);
         return Result.success();
     }
-
 
     /**
      * 删除信息
