@@ -17,7 +17,7 @@
             <el-table-column prop="style" label="服务方式" width="180px"/>
             <el-table-column prop="price" label="价格" width="180px"/>
             <el-table-column prop="sale" label="销量" width="180px"/>
-            <el-table-column prop="note" label="备注" width="300px"/>
+            <el-table-column prop="note" label="备注" width="250px"/>
             <el-table-column label="操作">
                 <template #default="scope">
                     <el-button size="normal" @click="handleEdit(scope.row)">编辑</el-button>

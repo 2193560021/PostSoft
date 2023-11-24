@@ -13,7 +13,7 @@
 
     <el-table :data="tableData" border stripe style="width: 100%">
 
-      <el-table-column prop="id" label="订单号" width="200" />
+      <el-table-column prop="id" label="订单号" width="190" />
 <!--      <el-table-column prop="id" label="ID" width="80"  />-->
       <el-table-column prop="img" label="图片" width="110">
 <!--        <img :src="userImg" alt="" width="90" height="90" style="border-radius: 10px">-->
@@ -29,11 +29,11 @@
       </el-table-column>
       <el-table-column prop="name" label="名称" width="100" sortable/>
       <el-table-column prop="count" label="数量" width="60"/>
-      <el-table-column prop="price" label="付款金额" width="120"/>
+      <el-table-column prop="price" label="付款金额" width="90"/>
       <el-table-column prop="payTime" label="支付时间" width="120"/>
       <el-table-column prop="customerId" label="买家ID" width="220"/>
-      <el-table-column prop="tel" label="联系方式" width="120"/>
-      <el-table-column prop="address" label="地址" width="120"/>
+      <el-table-column prop="tel" label="联系方式" width="110"/>
+      <el-table-column prop="address" label="地址" width="90"/>
       <el-table-column prop="state" label="状态" width="80"/>
       <el-table-column label="操作" fixed="right" >
         <template #default="scope">
