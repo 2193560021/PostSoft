@@ -1,22 +1,22 @@
 <template>
-    <div class="home" style="padding:10px">
+    <div style="padding:20px; width: 80%">
         <!-- 功能区域 -->
         <div style="margin:10px 0">
-            <el-input v-model="name" placeholder="" style="width:20%" clearable/>
-            <el-button type="danger" style="margin:0 10px" @click="load">搜索</el-button>
+            <el-input v-model="name" placeholder="请输入关键字" style="width:20%" clearable></el-input>
+            <el-button type="danger" style="margin:5px 10px" @click="load">搜索</el-button>
             <el-button type="danger" @click="add">新增</el-button>
         </div>
-        <el-table :data="tableData" border stripe style="width: 99%">
-            <el-empty description="description"/>
-            <el-table-column prop="img" label="图片" width="330">
+
+        <el-table :data="tableData" border style="width: 98%">
+            <el-table-column prop="img" label="图片" width="330px">
                 <template #default="scope">
-                    <el-image style="width: 300px;border-radius: 10px" :src="scope.row.img"/>
+                    <el-image style="width: 300px;border-radius: 10px" :src="scope.row.img"></el-image>
                 </template>
             </el-table-column>
-            <el-table-column prop="name" label="服务名称" width="150"/>
-            <el-table-column prop="price" label="价格" width="150"/>
-            <el-table-column prop="sale" label="销量" width="150"/>
-            <el-table-column prop="note" label="备注" width="250"/>
+            <el-table-column prop="name" label="服务名称" width="150px"/>
+            <el-table-column prop="price" label="价格" width="150px"/>
+            <el-table-column prop="sale" label="销量" width="150px"/>
+            <el-table-column prop="note" label="备注" width="250px"/>
             <el-table-column label="操作">
                 <template #default="scope">
                     <el-button size="normal" @click="handleEdit(scope.row)">编辑</el-button>

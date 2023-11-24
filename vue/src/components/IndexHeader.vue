@@ -1,18 +1,9 @@
 0<template>
   <div>
-
-    <el-menu
-        :default-active="path"
-        class="el-menu-demo"
-        mode="horizontal"
+    <el-menu :default-active="path" class="el-menu-demo" mode="horizontal"
         router
-        background-color="#e17c7c"
-        text-color="#fff"
-        active-text-color="#111"
-        @select="handleSelect"
-
-    >
-
+        background-color="#e17c7c" text-color="#fff" active-text-color="#111"
+        @select="handleSelect">
       <div style="width:350px;padding-left:60px;padding-top:4px;font-weight:bold;color:#343536;font-size:20px">
         <span style="color: #fff;font-size: 30px">流浪动物救助平台</span>
       </div>

@@ -1,26 +1,25 @@
 <template>
-    <div class="home" style="padding:10px;width: 80%">
+    <div style="padding:20px; width: 80%">
         <!-- 功能区域 -->
         <div style="margin:10px 0">
-            <el-input v-model="name" placeholder="" style="width:20%" clearable/>
-            <el-button type="danger" style="margin:0 10px" @click="load">搜索</el-button>
-            <el-button type="danger" @click="add">新增</el-button>
+            <el-input v-model="name" placeholder="请输入关键字" style="width:20%" clearable></el-input>
+            <el-button type="danger" style="margin-left: 10px" @click="load">搜索</el-button>
+            <el-button type="danger" style="margin-left: 10px" @click="add">新增</el-button>
         </div>
 
-        <el-table :data="tableData" border stripe style="width: 99%">
-            <el-empty description="description"/>
-            <el-table-column prop="img" label="图片" width="160">
+        <el-table :data="tableData" border style="width: 98%">
+            <el-table-column prop="img" label="图片" width="160px">
                 <template #default="scope">
-                    <el-image style="width: 130px;border-radius: 10px" :src="scope.row.img"/>
+                    <el-image style="width: 130px;border-radius: 10px" :src="scope.row.img"></el-image>
                 </template>
             </el-table-column>
-            <el-table-column prop="name" label="名称" width="180"/>
-            <el-table-column prop="date" label="生产日期" width="180"/>
-            <el-table-column prop="ddl" label="保质期" width="120"/>
-            <el-table-column prop="price" label="价格" width="120"/>
-            <el-table-column prop="sale" label="销量" width="120"/>
-            <el-table-column prop="stock" label="库存" width="120"/>
-            <el-table-column prop="note" label="备注" width="150"/>
+            <el-table-column prop="name" label="名称" width="180px"/>
+            <el-table-column prop="date" label="生产日期" width="180px"/>
+            <el-table-column prop="ddl" label="保质期" width="120px"/>
+            <el-table-column prop="price" label="价格" width="120px"/>
+            <el-table-column prop="sale" label="销量" width="120px"/>
+            <el-table-column prop="stock" label="库存" width="120px"/>
+            <el-table-column prop="note" label="备注" width="150px"/>
             <el-table-column fixed="right" label="操作" width="">
                 <template #default="scope">
                     <el-button size="normal" @click="handleEdit(scope.row)">编辑</el-button>
@@ -35,39 +34,24 @@
 
         <div style="margin:10px 0">
             <el-pagination
-                    v-model:currentPage="currentPage4"
-                    v-model:page-size="pageSize4"
-                    :page-sizes="[5,10, 20, 30, 40]"
-                    :small="small"
-                    :disabled="disabled"
-                    :background="background"
+                    v-model:currentPage="currentPage"
+                    v-model:page-size="pageSize"
+                    :page-sizes="[5,10, 20]"
+                    :small="true"
+                    :background="true"
                     layout="total, sizes, prev, pager, next, jumper"
                     :total="total"
                     @size-change="handleSizeChange"
-                    @current-change="handleCurrentChange"
-            />
-
-
-            <el-dialog v-model="dialogVisible"
-                       top="3vh"
-                       title="数据"
-                       width="30%"
-            >
+                    @current-change="handleCurrentChange"/>
+            <el-dialog v-model="dialogVisible" top="3vh" title="数据" width="30%">
                 <el-form :model="form" label-width="120px">
-
                     <el-form-item style="text-align: center" label-width="0">
-                        <el-upload
-                                class="avatar-uploader"
-                                action="http://localhost:8080/files/upload"
-                                :show-file-list="false"
-                                :on-success="handleAvatarSuccess"
-                                style="margin: 5px auto;width: 80%"
-                        >
+                        <el-upload class="avatar-uploader" action="http://localhost:8080/files/upload"
+                                   :show-file-list="false" :on-success="handleAvatarSuccess"
+                                   style="margin: 5px auto;width: 80%">
                             <img :src="form.img" width="90" height="90" class="avatar " style="border-radius: 10px">
                         </el-upload>
                     </el-form-item>
-
-
                     <el-form-item label="名称">
                         <el-input v-model="form.name" style="width:80%"></el-input>
                     </el-form-item>
@@ -93,13 +77,10 @@
                 <template #footer>
           <span class="dialog-footer">
             <el-button @click="dialogVisible = false">取消</el-button>
-            <el-button type="primary" @click="save"
-            >确认</el-button
-            >
+            <el-button type="primary" @click="save">确认</el-button>
           </span>
                 </template>
             </el-dialog>
-
         </div>
     </div>
 </template>
@@ -107,7 +88,6 @@
 <script>
 import {assertExpressionStatement} from '@babel/types'
 import request from '@/utils/request'
-
 
 export default {
     name: 'OrderMan',
@@ -117,8 +97,8 @@ export default {
             form: {},
             dialogVisible: false,
             name: '',
-            currentPage4: 1,
-            pageSize4: 5,
+            currentPage: 1,
+            pageSize: 5,
             total: 0,
             tableData: [],
             userImg: require("@/assets/img/800014267.jpg")
@@ -132,8 +112,8 @@ export default {
         load() {
             request.get("/goods", {
                 params: {
-                    pageNumber: this.currentPage4,
-                    pageSize: this.pageSize4,
+                    pageNumber: this.currentPage,
+                    pageSize: this.pageSize,
                     search: this.name
                 }
             }).then(res => {
@@ -189,11 +169,11 @@ export default {
 
         },
         handleSizeChange(pageSize) {     //改变每页数量触发
-            this.pageSize4 = pageSize
+            this.pageSize = pageSize
             this.load()
         },
         handleCurrentChange(pageNum) {  //改变当前页码触发
-            this.currentPage4 = pageNum
+            this.currentPage = pageNum
             this.load()
         },
         pageSize4() {
