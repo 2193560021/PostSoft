@@ -1,5 +1,5 @@
 <template>
-    <div style="background-color: #0B1F5E">
+    <div style="background-color: #f19595">
         <el-menu style="width:200px;min-height:calc(100vh - 50px);"
                 :default-active="path"
                 router
